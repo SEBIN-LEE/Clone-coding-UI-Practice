@@ -1,18 +1,17 @@
 import 'package:clong_coding/enter_address.dart';
-import 'package:clong_coding/find_res.dart';
 import 'package:clong_coding/theme/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class ConfirmPhoneScreen extends StatefulWidget {
-  const ConfirmPhoneScreen({Key? key}) : super(key: key);
+class FindResScreen extends StatefulWidget {
+  const FindResScreen({Key? key}) : super(key: key);
 
   @override
-  State<ConfirmPhoneScreen> createState() => _ConfirmPhoneScreenState();
+  State<FindResScreen> createState() => _FindResScreenState();
 }
 
-class _ConfirmPhoneScreenState extends State<ConfirmPhoneScreen> {
+class _FindResScreenState extends State<FindResScreen> {
   TextEditingController emailController = TextEditingController(text: '');
   final _formKey = GlobalKey<FormState>();
 
@@ -26,10 +25,10 @@ class _ConfirmPhoneScreenState extends State<ConfirmPhoneScreen> {
         return Scaffold(
             backgroundColor: Colors.white,
             appBar: AppBar(
-                title: const Text(
-                  'Login to Foodly',
-                  textAlign: TextAlign.center,
-                ),
+                // title: const Text(
+                //   'Find res',
+                //   textAlign: TextAlign.center,
+                // ),
                 ),
             body: SafeArea(
                 child: Form(
@@ -47,7 +46,7 @@ class _ConfirmPhoneScreenState extends State<ConfirmPhoneScreen> {
                                 child: Column(
                               children: [
                                 Text(
-                                  "Verify phone number",
+                                  "Find restaurants near you",
                                   style: textTheme.headline3!.copyWith(
                                     color: AppColors.sBlack,
                                   ),
@@ -56,26 +55,28 @@ class _ConfirmPhoneScreenState extends State<ConfirmPhoneScreen> {
 
                                 //Text - Enter~
                                 Text(
-                                  "Enter the 4-Digit code sent to you at\n+610489632578",
+                                  "Please enter your location or allow access to\nyour location to find restaurants near you.",
                                   style: textTheme.bodyText1!.copyWith(
                                     color: AppColors.sGrey,
                                   ),
                                   textAlign: TextAlign.center,
                                 ),
-                                SizedBox(height: 41.h),
+                                SizedBox(height: 34.h),
 
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    _otpTextField(4),
-                                    SizedBox(width: 20.w),
-                                    _otpTextField(4),
-                                    SizedBox(width: 20.w),
-                                    _otpTextField(4),
-                                    SizedBox(width: 20.w),
-                                    _otpTextField(4),
-                                  ],
-                                )
+                                //Outlined Button
+                                OutlinedButton(
+                                    onPressed: () {
+                                      //TODO - GO to Type location Page
+                                      // Get.to(() => EnterAddressScreen());
+                                    },
+                                    child: Row(children: [
+                                      Icon(Icons.directions_boat_filled),
+                                      Text('Use current location'),
+
+
+                                    ])),
+
+                                SizedBox(height: 20.h),
 
                                 //Elevated Button - Grey
                               ],
@@ -90,7 +91,7 @@ class _ConfirmPhoneScreenState extends State<ConfirmPhoneScreen> {
                               ElevatedButton(
                                 //TODO : GO TO NEXT PAGE
                                 onPressed: () {
-                                  Get.to(() => FindResScreen());
+                                  Get.to(() => EnterAddressScreen());
                                 },
                                 child: const Text('CONTINUE'),
                               ),
