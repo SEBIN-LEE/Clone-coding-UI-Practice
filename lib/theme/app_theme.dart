@@ -50,6 +50,9 @@ class AppTheme {
       outlinedButtonTheme: OutlinedButtonThemeData(
         
         style: OutlinedButton.styleFrom(
+          // fixedSize: (width: 48),
+          // padding: EdgeInsets.symmetric(horizontal: 18.0), //content padding inside button
+
           side: BorderSide(color: AppColors.sOrange),
           minimumSize: const Size(450, 48),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0))

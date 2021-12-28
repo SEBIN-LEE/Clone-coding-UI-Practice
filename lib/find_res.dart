@@ -69,67 +69,39 @@ class _FindResScreenState extends State<FindResScreen> {
                                       //TODO - GO to Type location Page
                                       // Get.to(() => EnterAddressScreen());
                                     },
-                                    child: Row(children: [
-                                      Icon(Icons.directions_boat_filled),
-                                      Text('Use current location'),
-
-
-                                    ])),
-
-                                SizedBox(height: 20.h),
+                                    child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Icon(Icons.near_me),
+                                          SizedBox(width: 18.w),
+                                          Text(
+                                            'Use current location',
+                                            style:
+                                                textTheme.bodyText1!.copyWith(
+                                              color: AppColors.sOrange,
+                                            ),
+                                          ),
+                                        ])),
 
                                 //Elevated Button - Grey
                               ],
                             )),
 
-                            SizedBox(height: 34.h),
+                            SizedBox(height: 20.h),
 
-                            //ElevatedButton - CONTINUE
+                            //ElevatedButton - Enter New Address
                             Center(
                                 child: Column(children: [
                               //Button - SIGN IN
                               ElevatedButton(
                                 //TODO : GO TO NEXT PAGE
                                 onPressed: () {
-                                  Get.to(() => EnterAddressScreen());
+                                  // Get.to(() => EnterAddressScreen());
                                 },
                                 child: const Text('CONTINUE'),
                               ),
                               SizedBox(height: 24.h),
-
-                              //Didn't receive code? // Resend Again
-                              RichText(
-                                text: TextSpan(
-                                  text: "Didn't receive code?   ",
-                                  style: textTheme.caption!.copyWith(
-                                    color: AppColors.sGrey,
-                                  ),
-                                  children: [
-                                    TextSpan(
-                                      text: "   Resend Again.", //파랑색으로 강조할 텍스트
-                                      style: textTheme.caption!.copyWith(
-                                        color: AppColors.sOrange,
-                                      ),
-                                      // recognizer: TapGestureRecognizer() //탭했을 때 액션 지정
-                                      //   ..onTap = () {
-                                      //     //TODO:Modify as per your requirement
-                                      //     showSnackBar(title: "Yeeeeee!", scaffoldKey: _scaffoldKey);
-                                      //   }
-                                    )
-                                  ],
-                                ),
-                              ),
-                              SizedBox(height: 34.h),
-
-                              Center(
-                                child: Text(
-                                  "By Signing up you agree to our Terms\nConditions & Privacy Policy.",
-                                  style: textTheme.bodyText1!.copyWith(
-                                    color: AppColors.sGrey,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
                             ])),
                           ],
                         )))));
@@ -137,29 +109,4 @@ class _FindResScreenState extends State<FindResScreen> {
     );
   }
 
-  // Returns "Otp custom text field"
-  Widget _otpTextField(int digit) {
-    return new Container(
-      width: 50.0,
-      height: 50.0,
-      alignment: Alignment.center,
-      child: new Text(
-        digit != null ? digit.toString() : "",
-        style: new TextStyle(
-          fontSize: 16.0,
-          color: AppColors.sBlack,
-        ),
-      ),
-      decoration: BoxDecoration(
-//            color: Colors.grey.withOpacity(0.4),
-          border: Border(
-              bottom: BorderSide(
-        width: 2.0,
-        color: AppColors.sGrey,
-      ))),
-    );
-  }
 }
-
-
-//Image.asset("assets/imgs/keyboard.png",width: 375.w, height: 291.h),
