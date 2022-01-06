@@ -1,4 +1,4 @@
-import 'package:clong_coding/walk1.dart';
+import 'package:clong_coding/hugin_front/home.dart';
 import 'package:flutter/material.dart';
 import 'package:clong_coding/theme/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -98,7 +98,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   ElevatedButton(
                       //TODO : GO TO NEXT PAGE
                       onPressed: () {
-                        Get.to(() => const Walk1Screen());
+                        // Get.to(() => const Walk1Screen()); 
+                        Get.to(() => const HomeScreen()); 
                       },
                       child: const Text('GET STARTED')),
                 ],
