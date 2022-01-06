@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   
                   //name
                   Text(
-                    "이세빈 님",
+                    "이세빈",
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                     ),
